@@ -8,8 +8,9 @@
 # Add our dependencies.
 import csv
 import os
+print(os.getcwd())
 # Assign a variable to load a file from a path.
-file_to_load = os.path.join("Resources", "election_results.csv")
+file_to_load = os.path.join("resources", "election_results.csv")
 # Assign a variable to save the file to a path.
 file_to_save = os.path.join("analysis", "election_analysis.txt")
 
@@ -43,7 +44,7 @@ with open(file_to_load) as election_data:
         # Print the candidate name from each row.
         candidate_name = row[2]
 
-        # If the candidate does not match any existing candidate...
+        # If the candidate d  oes not match any existing candidate...
         if candidate_name not in candidate_options:
             # Add it to the list of candidates.
             candidate_options.append(candidate_name)
@@ -92,5 +93,5 @@ with open(file_to_save, "w") as txt_file:
         f"Winning Percentage: {winning_percentage:.1f}%\n"
         f"------------------------------\n")
     print(winning_candidate_summary)
-   # save the winning candidate's eresults to the text file.
-   txt_file.write(winning_candidate_summary)
+    # save the winning candidate's eresults to the text file.
+    txt_file.write(winning_candidate_summary)
